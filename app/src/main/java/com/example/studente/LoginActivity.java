@@ -99,6 +99,7 @@ public class LoginActivity extends AppCompatActivity {
                 cancelAction = (Button)dialog.getWindow(). findViewById(R.id.cancel_action);
 
                 regiestAction.setOnClickListener(new View.OnClickListener() {
+
                     @Override
                     public void onClick(View view) {
                         //这三个放到点击里面
