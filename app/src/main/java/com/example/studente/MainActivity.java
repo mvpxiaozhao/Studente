@@ -10,16 +10,13 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
+
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-
-import java.security.Key;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -180,6 +177,7 @@ public class MainActivity extends AppCompatActivity {
                                 Log.i("asdasd",i+"+"+i1);
                                 getSupportFragmentManager().beginTransaction().replace(R.id.maincontent,new Fragment_02()).commit();
                                 Log.i("asdasd",i+"+"+i1);
+
                                 break;
                         }
                     }else if(i==1){
