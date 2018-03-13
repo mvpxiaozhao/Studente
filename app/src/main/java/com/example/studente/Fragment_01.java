@@ -38,6 +38,8 @@ public class Fragment_01 extends Fragment {
 
 
 
+
+
     }
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {

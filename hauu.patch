@@ -1,0 +1,16 @@
+Index: app/src/main/java/com/example/studente/Fragment_01.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/studente/Fragment_01.java	(date 1520918132000)
++++ app/src/main/java/com/example/studente/Fragment_01.java	(revision )
+@@ -38,6 +38,8 @@
+ 
+ 
+ 
++
++
+     }
+     @Override
+     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
