@@ -30,12 +30,14 @@ import java.util.Map;
 
 public class Fragment_01 extends Fragment {
 
-List<Map<String,Object>> list=new ArrayList<>();
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_01, container, false);
         return view;
+
+
+
     }
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {

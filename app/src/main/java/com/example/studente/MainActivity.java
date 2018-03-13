@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.widget.SlidingPaneLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -111,42 +113,34 @@ public class MainActivity extends AppCompatActivity {
     }
 
     class Expandd extends BaseExpandableListAdapter {
-
         @Override
         public int getGroupCount() {
             return groupData.size();
         }
-
         @Override
         public int getChildrenCount(int i) {
             return childData.get(i).size();
         }
-
         @Override
         public Object getGroup(int i) {
             return null;
         }
-
         @Override
         public Object getChild(int i, int i1) {
             return null;
         }
-
         @Override
         public long getGroupId(int i) {
             return 0;
         }
-
         @Override
         public long getChildId(int i, int i1) {
             return 0;
         }
-
         @Override
         public boolean hasStableIds() {
             return false;
         }
-
         @Override
         public View getGroupView(int i, boolean b, View view, ViewGroup viewGroup) {
             if (view == null) {
@@ -159,15 +153,70 @@ public class MainActivity extends AppCompatActivity {
             return  view;
         }
         @Override
-        public View getChildView(int i, int i1, boolean b, View view, ViewGroup viewGroup) {
+        public View getChildView(final int i, final int i1, boolean b, View view, ViewGroup viewGroup) {
             if (view == null) {
                 LayoutInflater inflater = LayoutInflater.from(getApplication());
                 view = inflater.inflate(R.layout.layout_demo, null);
             }
+             LinearLayout dsdsdsdsd = (LinearLayout) view.findViewById(R.id.dsdsdsdsd);
+
             ImageView imageViewListGount = (ImageView) view.findViewById(R.id.imgimg);
             imageViewListGount.setImageResource((Integer) childData.get(i).get(i1).get(key2));
             TextView textViewListGount = (TextView) view.findViewById(R.id.texttxxt);
             textViewListGount.setText(childData.get(i).get(i1).get(key3).toString());
+            imageViewListGount.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int sss=i;
+                    int www=i1;
+                    if(i==0){
+                        switch (www){
+                            case 0:
+                                Log.i("asdasd",i+"+"+i1);
+                                getSupportFragmentManager().beginTransaction().add(R.id.maincontent,new Fragment_01()).commit();
+                                Log.i("asdasd",i+"+"+i1);
+                                break;
+                            case 1:
+                                Log.i("asdasd",i+"+"+i1);
+                                getSupportFragmentManager().beginTransaction().replace(R.id.maincontent,new Fragment_02()).commit();
+                                Log.i("asdasd",i+"+"+i1);
+                                break;
+                        }
+                    }else if(i==1){
+                        switch (www){
+                            case 0:
+                                Log.i("asdasd",i+"+"+i1);
+                                getSupportFragmentManager().beginTransaction().replace(R.id.maincontent,new Fragment_03()).commit();
+                                break;
+                            case 1:
+                                Log.i("asdasd",i+"+"+i1);
+                                getSupportFragmentManager().beginTransaction().replace(R.id.maincontent,new Fragment_04()).commit();
+                                break;
+                        }
+                    }else if(i==2){
+                        switch (www){
+                            case 0:
+                                Log.i("asdasd",i+"+"+i1);
+                                getSupportFragmentManager().beginTransaction().replace(R.id.maincontent,new Fragment_05()).commit();
+                                break;
+                            case 1:
+                                Log.i("asdasd",i+"+"+i1);
+                                getSupportFragmentManager().beginTransaction().replace(R.id.maincontent,new Fragment_06()).commit();
+                                break;
+                        }
+                    }else if(i==3){
+                        switch (www){
+                            case 0:
+                                Log.i("asdasd",i+"+"+i1);
+                                getSupportFragmentManager().beginTransaction().replace(R.id.maincontent,new Fragment_07()).commit();
+                                break;
+                        }
+                    }
+
+
+                }
+            });
+
             return  view;
         }
 
